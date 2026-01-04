@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: arial;
+    --v: rgba(238, 130, 238, 0.753);
+}
+body *:not(:has(*)){
+    animation: loadup 0.3s linear;
+    position: relative;
+}
+@media screen and ( min-width: 0px ) {
+    body{
+        background: radial-gradient(circle, violet, black, black) top;
+        background-size: 100% 200%;
+        height: 100dvh;
+        width: 100dvw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    body h1{
+        background: linear-gradient(45deg,var(--v), rgba(0,0,255,0.315), var(--v));
+        font-size: 4em;
+        font-family: courier;
+        color: transparent;
+        font-weight: 900;
+        -webkit-background-clip: text;
+    }
+    body h2{
+        font-family: monospace;
+        font-size: 2em;
+        color: transparent;
+        background: linear-gradient(12deg,gray, white);
+        -webkit-background-clip: text;
+        margin: 1% 0;
+    }
+    body p{
+        color: gray;
+        margin: 2% 0;
+    }
+    body .line{
+        display: flex;
+        justify-content: center;
+    }
+    body .line button{
+        color: white;
+        background: black;
+        padding: 3% 8%;
+        margin: 0 1%;
+        min-width: max-content;
+        cursor: pointer;
+    }
+    body .line button:hover{
+        background: violet;
+        color: white;
+        border-color: white;
+        transition: 150ms;
+    }
+    body .input{
+        margin: 1% 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    body .input input{
+        padding: 2% 5%;
+        min-width: 60ch;
+        border-radius: 14pt;
+        font-size: 16pt;
+        background: #fff;
+        border-color: violet;
+        background: rgba(0, 0, 0, 0.3);
+        font-family: monospace;
+        outline-color: white;
+    }
+    body *::placeholder{
+        color: violet;
+    }
+    body .input input~button{
+        position: absolute;
+        color: white;
+        border-color: white;
+        background: black;
+        right: 1%;
+        padding: 2% 2%;
+        border-radius: 12pt;
+    }
+    body .input+.line{
+        margin: 5% 0;
+    }
+}
+@media screen and ( max-width: 800px ) {
+    body h1{
+        font-size: 35pt;
+    }
+    body h2{
+        font-size: 16pt;
+        text-align: center;
+    }
+    body p{
+        text-align: center;
+        font-size: 12pt;
+        margin: 10% 0 5% 0;
+    }
+    body .line{
+        position: absolute;
+        bottom: 3%;
+        width: 90%;
+        flex-direction: column;
+    }
+    body .line button{
+        margin: 1% 0;
+    }
+    body .input input{
+        min-width: 44ch;
+        font-size: 12pt;
+        padding: 4% 5%;
+    }
+    body .input input~button{
+        border-radius: 6pt;
+        padding: 2.8% 1%;
+        outline: none;
+    }
+}
+@keyframes loadup {
+    from{ transform:translateY(20%);opacity: 0;}
+    to{ transform:translateY(0%);}
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniqueVideos</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <h1>UNIQUEVIDEOS</h1>
+    <h2>BAIXE SEUS VIDEOS UM POR UM</h2>
+    <p>Se nao quer baixar uma playlist inteira, você escolheu a opção certa!</p>
+    <div class="input">
+        <input autofocus type="search" placeholder="insira o link" onchange="down()">
+        <button onclick="down()">pesquisar</button>
+    </div>
+       <div class="line">
+            <button onclick="location.href=location.origin;">pagina principal</button>
+            <button onclick="location.href='./any.html'">baixar varios videos</button>
+            <button onclick="location.href='./inter.html'">mergulhar na internet</button>
+        </div>
+</body>
+<script>
+    function down ( ) {
+        const search = document.querySelector('input')
+        if ( search.value.length > 3 ){
+            const a = document.createElement('a')
+            a.type = 'application/mp4'
+            a.download = 'video.mp4'
+            a.href = search.value 
+            a.click();
+            search.value = ''
+        }
+    }
+</script>
+</html>

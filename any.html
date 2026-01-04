@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnyVideos</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <h1>ANYVIDEOS</h1>
+    <h2>BAIXE TODOS OS VIDEOS DE UMA VEZ</h2>
+    <p>se você quer baixar uma playlist inteira, você escolheu a opção certa!</p>
+    <div class="input">
+        <textarea autofocus placeholder="coloque aqui os links dos videos"></textarea>
+        <button onclick="down()">pesquisar</button>
+    </div>
+       <div class="line">
+            <button onclick="location.href=location.origin;">pagina principal</button>
+            <button onclick="location.href='./unique.html'">baixar um video</button>
+            <button onclick="location.href='./inter.html'">mergulhar na internet</button>
+        </div>
+</body>
+<script>
+     function down ( ) {
+        const search = document.querySelector('textarea')
+        search.value.split('\n').forEach( s =>{
+             if ( s > 3 ){
+            const a = document.createElement('a')
+            a.type = 'application/mp4'
+            a.download = 'video.mp4'
+            a.href = s 
+            a.click();
+            search.value.replace( s, '' );
+        }
+        })
+       
+    }
+</script>
+</html>
