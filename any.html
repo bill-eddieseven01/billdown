@@ -19,21 +19,18 @@
             <button onclick="location.href='./unique.html'">baixar um video</button>
             <button onclick="location.href='./inter.html'">mergulhar na internet</button>
         </div>
+        <a download class="none"></a>
 </body>
 <script>
      function down ( ) {
         const search = document.querySelector('textarea')
         search.value.split('\n').forEach( s =>{
-             if ( s > 3 ){
-            const a = document.createElement('a')
-            a.type = 'application/mp4'
-            a.download = 'video.mp4'
+             if ( s.length > 3 ){
+            const a = document.querySelector('a.none')
             a.href = s 
             a.click();
             search.value.replace( s, '' );
-        }
-        })
-       
+        }})
     }
 </script>
 </html>

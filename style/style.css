@@ -123,6 +123,9 @@ body *:not(:has(*)){
         padding: 2.8% 1%;
         outline: none;
     }
+    .none{
+        display: none;
+    }
 }
 @keyframes loadup {
     from{ transform:translateY(20%);opacity: 0;}

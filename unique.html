@@ -19,14 +19,13 @@
             <button onclick="location.href='./any.html'">baixar varios videos</button>
             <button onclick="location.href='./inter.html'">mergulhar na internet</button>
         </div>
+        <a download class="none"></a>
 </body>
 <script>
     function down ( ) {
         const search = document.querySelector('input')
         if ( search.value.length > 3 ){
-            const a = document.createElement('a')
-            a.type = 'application/mp4'
-            a.download = 'video.mp4'
+            const a = document.querySelector('a.none')
             a.href = search.value 
             a.click();
             search.value = ''
